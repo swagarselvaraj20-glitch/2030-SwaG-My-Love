@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+    --font-script: 'Dancing Script', cursive;
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif-heading {
+    font-family: var(--font-serif);
+  }
+
+  .font-script-accent {
+    font-family: var(--font-script);
+  }
+}
+
+/* Custom romantic animations */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0px) rotate(0deg) scale(0.9);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-120px) rotate(15deg) scale(1.1);
+    opacity: 0;
+  }
+}
+
+@keyframes petalSway {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(15px, 60px) rotate(45deg);
+  }
+  100% {
+    transform: translate(-10px, 130px) rotate(90deg);
+  }
+}
+
+@keyframes fairyGlow {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(0.95);
+    filter: drop-shadow(0 0 4px rgba(254, 215, 170, 0.5));
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 10px rgba(254, 215, 170, 0.9));
+  }
+}
+
+@keyframes gentlePulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+.animate-float-heart {
+  animation: floatUp 6s ease-in-out infinite;
+}
+
+.animate-fairy-glow {
+  animation: fairyGlow 3s ease-in-out infinite;
+}
+
+.animate-gentle-pulse {
+  animation: gentlePulse 4s ease-in-out infinite;
+}
+
+.animate-petal-drift {
+  animation: petalSway 9s linear infinite;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Glassmorphism romantic surface */
+.romantic-glass {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(254, 226, 237, 0.65);
+}
+
+.romantic-glass-subtle {
+  background: rgba(255, 250, 247, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(248, 221, 232, 0.5);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(248, 221, 232, 0.3);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(216, 160, 168, 0.5);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(216, 160, 168, 0.8);
+}

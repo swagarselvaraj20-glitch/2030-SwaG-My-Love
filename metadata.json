@@ -1,0 +1,6 @@
+{
+  "name": "Our Little Universe ♡",
+  "description": "A private, magical, romantic digital world created exclusively for SwaG and his love, filled with memories, love letters, dreams, and forever promises.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
